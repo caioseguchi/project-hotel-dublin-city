@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel City - Client</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-light py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <h3 class="mb-0">Dublin Hotel City</h3>
+        </div>
+        <nav>
+            <ul class="nav align-items-baseline">
+                <li class="nav-item"><a th:href="@{/}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a th:href="@{/login}" class="nav-link">Login</a></li>
+                <li class="nav-item"><a th:href="@{/register}" class="nav-link">Register</a></li>
+                <li class="nav-item"><a th:href="@{/facilities}" class="nav-link">Facilities</a></li>
+                <li class="nav-item"><a th:href="@{/client}" class="nav-link">Client</a></li>
+                <li class="nav-item"><a th:href="@{/client-tripadvaisor}" class="nav-link">Tripadvaisor</a></li>
+                <li class="nav-item"><a th:href="@{/client-weather}" class="nav-link">Weather</a></li>
+                <li class="nav-item">
+                    <form th:action="@{/logout}" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content - Client Page -->
+<main class="d-flex flex-column justify-content-center align-items-center text-center" style="height: 70vh;">
+    <!-- Weather Section -->
+    <section class="mb-5">
+        <h2 class="text-center mb-4">Today's Weather</h2>
+        <div class="d-flex justify-content-center align-items-center">
+            <!-- Ícone do clima -->
+            <div th:if="${weather != null}">
+                <!-- Ícone do clima -->
+                <img th:src="'https://openweathermap.org/img/wn/' + ${weather.icon} + '@2x.png'" alt="Weather Icon" class="mr-3">
+                <p>
+                    <strong th:text="${weather.description}"></strong>,
+                    <span th:text="${weather.temperature} + '°C'"></span> -
+                    Enjoy a beautiful day in Dublin!
+                </p>
+            </div>
+            <div th:if="${weather == null}">
+                <p>Unable to retrieve weather data. Please try again later.</p>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+
+
+<!-- Footer -->
+<footer class="bg-light py-4 mt-auto">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Contact Us</h5>
+                <p><i class="fas fa-phone-alt"></i> +123456789</p>
+                <p><i class="fas fa-envelope"></i> info@hotelcity.com</p>
+            </div>
+            <div class="col-md-6">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i> Facebook</a> |
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and Icons -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome Icons -->
+</body>
+</html>

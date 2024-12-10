@@ -1,0 +1,18 @@
+/* Reduzindo o tamanho da fonte para cabeçalhos e labels */
+form h2 {
+    font-size: 1.5rem; /* Tamanho proporcional */
+    font-weight: bold; /* Garanta um visual elegante */
+}
+
+form label {
+    font-size: 1rem; /* Tamanho adequado para textos do formulário */
+}
+
+/* Inputs com espaçamento e fonte ajustada */
+form input,
+form select,
+form button {
+    font-size: 1rem;
+    padding: 0.5rem; /* Espaço interno */
+    margin-bottom: 1rem; /* Espaçamento entre os campos */
+}

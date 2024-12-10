@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel City - Client</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-light py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <h3 class="mb-0">Dublin Hotel City</h3>
+            </div>
+            <nav>
+                <ul class="nav align-items-baseline">
+                    <li class="nav-item"><a th:href="@{/}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a th:href="@{/login}" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a th:href="@{/facilities}" class="nav-link">Facilities</a></li>
+                    <li class="nav-item"><a th:href="@{/client}" class="nav-link">Client</a></li>
+                    <li class="nav-item"><a th:href="@{/client-tripadvaisor}" class="nav-link">Tripadvaisor</a></li>
+                    <li class="nav-item"><a th:href="@{/client-weather}" class="nav-link">Weather</a></li>
+                    <li class="nav-item">
+                        <form th:action="@{/logout}" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        <!-- Main Content - Client Page -->
+        <main class="container my-5">
+    
+            <!-- Room Cards -->
+            <section class="mb-5">
+                <h2 class="text-center mb-4">Available Rooms</h2>
+                <div class="row">
+                    <!-- Room Card Template 101 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room101.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Flower Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 2<br>
+                                    <strong>Price per Night:</strong> €80
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Card Template 102 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room102.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Sleepy Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 2<br>
+                                    <strong>Price per Night:</strong> €80
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Card Template 103 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room103.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Couple in love Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 1<br>
+                                    <strong>Price per Night:</strong> $100
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Card Template 104 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room104.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Purple Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 2<br>
+                                    <strong>Price per Night:</strong> €80
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Card Template 105 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room105.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Friends Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 1<br>
+                                    <strong>Price per Night:</strong> €70
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Card Template 201 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room201.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Cozy Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 2<br>
+                                    <strong>Price per Night:</strong> $100
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Card Template 202 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room202.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Family Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 6<br>
+                                    <strong>Price per Night:</strong> €200
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Room Card Template 203 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room203.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Family Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 6<br>
+                                    <strong>Price per Night:</strong> €200
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Card Template 204 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room204.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Summer Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 4<br>
+                                    <strong>Price per Night:</strong> €120
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Room Card Template 205 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/room205.jpg}" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Chill Room</h5>
+                                <p class="card-text">
+                                    <strong>Max Guests:</strong> 4<br>
+                                    <strong>Price per Night:</strong> 120
+                                </p>
+                                <button class="btn btn-primary" onclick="window.open('https://www.booking.com', '_blank')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="facilities" class="container mt-5">
+                <h2 class="text-center mb-4">Our Facilities</h2>
+                <div class="row">
+                    <!-- Breakfast -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/breakfast.jpg}" class="card-img-top" alt="Breakfast">
+                            <div class="card-body">
+                                <h5 class="card-title">Breakfast</h5>
+                                <p class="card-text">
+                                    Enjoy a complimentary breakfast to start your day with energy and taste.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hotel Bar and Restaurant -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/bar-restaurant.jpg}" class="card-img-top" alt="Hotel Bar and Restaurant">
+                            <div class="card-body">
+                                <h5 class="card-title">Hotel Bar and Restaurant</h5>
+                                <p> Check our Restaurant with local cuisine
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gym -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img th:src="@{/images/gym.jpg}" class="card-img-top" alt="Gym">
+                            <div class="card-body">
+                                <h5 class="card-title">Gym</h5>
+                                <p class="card-text">
+                                    Stay fit during your stay with access to our fully equipped fitness center.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    
+
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-auto">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-phone-alt"></i> +123456789</p>
+                    <p><i class="fas fa-envelope"></i> info@hotelcity.com</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Follow Us</h5>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a> |
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Icons -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome Icons -->
+</body>
+</html>

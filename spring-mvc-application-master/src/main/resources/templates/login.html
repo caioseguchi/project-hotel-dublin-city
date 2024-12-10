@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel City - Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header class="bg-light py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <h3 class="mb-0">Dublin Hotel City</h3>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a th:href="@{/}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a th:href="@{/login}" class="nav-link">Login</a></li>
+                <li class="nav-item"><a th:href="@{/register}" class="nav-link">Register</a></li>
+                <li class="nav-item"><a th:href="@{/facilities}" class="nav-link">Facilities</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Login Form Section -->
+<main class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
+        <div th:if="${param.success}">
+            You successfully registered. Please use your credentials to log in.
+        </div>
+        <div th:if="${param.error}">
+            Login or password incorrect.
+        </div>
+
+        <div th:if="${param.logout}">
+            You've been logged out.
+        </div>
+
+        <form th:action="@{/login}" method="post">
+            <h4 class="text-center mb-4">Login to Hotel City</h4>
+
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input name="username" type="text" id="username" class="form-control" placeholder="Enter your username" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input name="password" type="password" id="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+
+            <!-- Botão de Login -->
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+
+            <!-- Link para registro -->
+            <div class="text-center mt-3">
+                <p>Don't have an account? <a th:href="@{/register}" class="btn btn-outline-secondary btn-sm">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+</main>
+
+
+<!-- Footer -->
+<footer class="bg-light py-4 mt-auto">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Contact Us</h5>
+                <p><i class="fas fa-phone-alt"></i> +123456789</p>
+                <p><i class="fas fa-envelope"></i> info@hotelcity.com</p>
+            </div>
+            <div class="col-md-6">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i> Facebook</a> |
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS and Icons -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome Icons -->
+</body>
+</html>
