@@ -1,1 +1,1 @@
-web: java -jar target/SpringMvcApplication.jar
+web java -Dserver.port=$PORT $JAVA_OPTS -jar target/spring-mvc-application-0.0.1-SNAPSHOT.jar
