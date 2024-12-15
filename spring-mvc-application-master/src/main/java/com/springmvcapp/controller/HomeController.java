@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.security.Principal;
 
 @Controller
-@RequestMapping("/hotel-dublin-city")
+@RequestMapping("/")
 public class HomeController {
 
     @GetMapping

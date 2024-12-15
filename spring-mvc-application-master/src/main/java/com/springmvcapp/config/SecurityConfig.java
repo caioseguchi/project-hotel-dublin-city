@@ -25,14 +25,18 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http.authorizeHttpRequests(request -> request
-                .requestMatchers("/", "/register", "/login").permitAll()
+                        .requestMatchers("/", "/register", "/login", "/map").permitAll()
                         .requestMatchers("/admin/**", "/admin-search-user/**").hasRole("ADMIN")
-                        .requestMatchers("/client/**", "/client-weather/**", "/client-tripadvaisor**", "/facilities").hasRole("USER")
-                .anyRequest().authenticated())
+                        .requestMatchers("/client/**", "/client-weather/**", "/client-exchange/**", "/facilities").hasRole("USER")
+                        .anyRequest().authenticated())
                 .formLogin(form -> form.loginPage("/login")
                         .defaultSuccessUrl("/", true)
+                        .failureUrl("/login?error=true")
                         .permitAll())
-                .logout(LogoutConfigurer::permitAll);
+                .logout(LogoutConfigurer::permitAll)
+                .exceptionHandling(exception -> exception
+                        .accessDeniedPage("/login"));
+
         return http.build();
     }
 
