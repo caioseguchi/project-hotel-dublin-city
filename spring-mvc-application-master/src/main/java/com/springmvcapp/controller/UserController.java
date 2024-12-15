@@ -39,10 +39,6 @@ public class UserController {
     }
 
 
-    @GetMapping("/client-tripadvaisor")
-    public String tripPage() {
-        return "client-tripadvaisor";
-    }
     @GetMapping("/facilities")
     public String facilitiesPage() {
         return "facilities";
